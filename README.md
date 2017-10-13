@@ -1,0 +1,2 @@
+# wysiwyg-footnotes
+WP plugin
