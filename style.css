@@ -1,0 +1,53 @@
+.hz-footnote-block{
+	color:#9AA238;
+	font-size: 12px;
+	position:relative;
+	display:inline-block;
+	cursor:pointer;
+}
+.hz-footnote{
+	display:none;
+	position: absolute;
+	top:0;
+	left:0;
+	box-sizing:border-box;
+	padding: 25px;
+	color: #000;
+	border: 1px solid #ddd;
+	border-top: 3px solid #9AA238;
+	background:#fff;
+	width: 500px;
+	z-index: 22;
+	font-size: 16px;
+}
+.hz-footnote-block:hover .hz-footnote{
+	display:block;
+}
+.hz-footnote a{
+	color: #28AAE1;
+	text-decoration: none;
+}
+.hz-footnote p{
+	margin-bottom: 15px;
+}
+.hz-footnotedivider {
+	display:block;
+	width: 100%;
+	height: 1px;
+	background: #9AA238;
+	margin: 30px 0 15px;
+}
+.hz-footnotes-bottom ol{
+	list-style-type:decimal;
+	margin-left: 15px;
+}
+
+.hz-footnotes-bottom ol li{
+	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 20px;
+}
+.hz-footnotes-bottom ol li a{
+	color: #28AAE1;
+	text-decoration: none;
+}
