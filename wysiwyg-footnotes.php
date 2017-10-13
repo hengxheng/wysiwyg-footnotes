@@ -50,12 +50,12 @@ function footnote_convert($content) {
 
 	$n = 1;
 	$notes = array();
-	if (preg_match_all('/\[footnote\*(.*?)\]/s', $content, $matches)) {
+	if (preg_match_all('/\[footnote\*(.*?)\*footnote\]/s', $content, $matches)) {
 		foreach($matches[0] as $key => $marker) {
-			$note = preg_replace('/\[footnote\*(.*?)\]/s', '['.$n.']', $marker);
+			$note = preg_replace('/\[footnote\*(.*?)\*footnote\]/s', '['.$n.']', $marker);
 			$m = $matches[1][$key];
 			$notes[$n] = $m;	
-			$content = str_replace($marker, "<span class='hz-footnote-block'>[$n]<span class='hz-footnote'>$m</span></span>", $content);
+			$content = str_replace($marker, "<span class='hz-footnote-block'><a href='#footnote-$n'>[$n]</a></span>", $content);
 			$n++;
 		}
 
@@ -66,9 +66,10 @@ function footnote_convert($content) {
 		$content .= "<div class='hz-footnotes-bottom' id='footnotes-$post_id'>";
 		$content .= "<div class='hz-footnotedivider'></div>";
 			$content .= "<ol>";
-
+			$i = 1;
 			foreach($notes as $nt){
-				$content .= "<li>$nt</li>";
+				$content .= "<li id='footnote-$i'>$nt</li>";
+				$i++;
 			}
 			$content .= "</ol>";
 		$content .= "</div>";

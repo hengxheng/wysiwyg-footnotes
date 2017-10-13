@@ -5,7 +5,7 @@
 			icon: false,
 			onclick: function(cc){
 				editor.focus();
-				editor.selection.setContent('[footnote* '+editor.selection.getContent()+']');
+				editor.selection.setContent('[footnote* '+editor.selection.getContent()+' *footnote]');
 			}
 		})
 	});
